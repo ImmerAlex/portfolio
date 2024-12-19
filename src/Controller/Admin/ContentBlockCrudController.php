@@ -15,15 +15,7 @@ class ContentBlockCrudController extends AbstractCrudController
     {
         return ContentBlock::class;
     }
-
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Block content')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edit block content')
-            ->setPageTitle(Crud::PAGE_NEW, 'Create block content');
-    }
-
+    
     public function configureFields(string $pageName): iterable
     {
         yield NumberField::new('blockIndex');

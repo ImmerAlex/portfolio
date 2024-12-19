@@ -18,14 +18,6 @@ class TechnologyCrudController extends AbstractCrudController
         return Technology::class;
     }
 
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Technology')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edit technology')
-            ->setPageTitle(Crud::PAGE_NEW, 'Create technology');
-    }
-
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $entityInstance->setImagePath(

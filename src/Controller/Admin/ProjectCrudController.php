@@ -10,7 +10,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -19,14 +18,6 @@ class ProjectCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Project::class;
-    }
-
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Project')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edit project')
-            ->setPageTitle(Crud::PAGE_NEW, 'Create project');
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void

@@ -22,10 +22,7 @@ class UserCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('User')
             ->setEntityLabelInPlural('Users')
-            ->setSearchFields(['username', 'email'])
-            ->setPageTitle(Crud::PAGE_INDEX, 'Users')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edit User')
-            ->setPageTitle(Crud::PAGE_NEW, 'Create User');
+            ->setSearchFields(['username', 'email']);
     }
 
     public function configureFields(string $pageName): iterable
