@@ -18,6 +18,12 @@ const calculateTime = () => {
 // Fonction qui met à jour le contenu de la page
 const updateContent = () => {
     const time = calculateTime();
+
+    // If the date is passed, redirect to the home page
+    if (time.months < 0) {
+        window.location.href = '/home';
+    }
+
     document.getElementById('months').innerText = time.months;
     document.getElementById('days').innerText = time.days;
     document.getElementById('hours').innerText = time.hours;

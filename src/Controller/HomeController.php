@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    #[Route('/', name: 'root')]
     public function index(): Response
     {
         $openDate = new \DateTime('2025-01-31T00:00:00+01:00');
@@ -18,7 +18,13 @@ class HomeController extends AbstractController
         if ($diff->invert) {
             return $this->render('home/under-constructi.html.twig');
         } else {
-            return $this->render('home/index.html.twig');
+            return $this->redirectToRoute('home');
         }
+    }
+
+    #[Route('/home', name: 'home')]
+    public function home(): Response
+    {
+        return $this->render('home/index.html.twig');
     }
 }
